@@ -70,7 +70,7 @@ export function App() {
     <main className="page-shell">
       <section className="hero-panel">
         <p className="eyebrow">ACTS 4:13</p>
-        <h1>A recognizable life with Jesus.</h1>
+        <h1>He reaches into the deep.</h1>
         <p className="hero-copy">
           When life pulls you under, Jesus meets you there. Follow a free rhythm of reflection, practice, and faithful steps toward a life that looks like Him.
         </p>
