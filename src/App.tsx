@@ -70,13 +70,13 @@ export function App() {
     <main className="page-shell">
       <section className="hero-panel">
         <p className="eyebrow">ACTS 4:13</p>
-        <h1>He reaches into the deep.</h1>
+        <h1>Find your next faithful step.</h1>
         <p className="hero-copy">
-          When life pulls you under, Jesus meets you there. Follow a free rhythm of reflection, practice, and faithful steps toward a life that looks like Him.
+          Create a free account to save your reflections, follow guided journeys, and return to a steady next step with Jesus whenever you need it.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Create your free account. Take the next step.</span>
+          <span>Create your free account. Keep your next step close.</span>
         </div>
       </section>
 
