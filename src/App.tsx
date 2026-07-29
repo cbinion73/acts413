@@ -72,7 +72,7 @@ export function App() {
         <p className="eyebrow">ACTS 4:13</p>
         <h1>Keep your eyes on Jesus.</h1>
         <p className="hero-copy">
-          Peter began to sink when he saw the storm around him. We have storms around us too. Where will we look? Where will we turn? Jesus is our rescue. Create a free account for guided reflections and simple practices that help you keep your eyes on Him. Join ordinary people being rescued, formed, and sent.
+          Peter began to sink when he saw the storm around him and lost his focus on Jesus. We have storms around us too. Where will we look? Where will we turn? Jesus is our rescue. Create a free account for guided reflections and simple practices that help you keep your eyes on Him. Join ordinary people being rescued, formed, and sent.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
