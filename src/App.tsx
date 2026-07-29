@@ -1,0 +1,129 @@
+import { FormEvent, useEffect, useState } from "react";
+import type { User } from "@supabase/supabase-js";
+import { hasSupabaseConfig, supabase } from "./lib/supabase";
+
+type Mode = "sign-in" | "sign-up";
+
+export function App() {
+  const [user, setUser] = useState<User | null>(null);
+  const [mode, setMode] = useState<Mode>("sign-in");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    if (!supabase) return;
+
+    void supabase.auth.getUser().then(({ data }) => setUser(data.user));
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => listener.subscription.unsubscribe();
+  }, []);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage("");
+    setBusy(true);
+
+    if (!supabase) {
+      setMessage("Connect the Supabase environment variables before using account access.");
+      setBusy(false);
+      return;
+    }
+
+    const result = mode === "sign-in"
+      ? await supabase.auth.signInWithPassword({ email, password })
+      : await supabase.auth.signUp({ email, password });
+
+    if (result.error) {
+      setMessage(result.error.message);
+    } else if (mode === "sign-up") {
+      setMessage("Account created. Check your email if verification is required, then sign in.");
+      setMode("sign-in");
+    } else {
+      setMessage("Welcome back.");
+    }
+
+    setBusy(false);
+  }
+
+  async function signOut() {
+    if (!supabase) return;
+    await supabase.auth.signOut();
+    setMessage("You are signed out.");
+  }
+
+  return (
+    <main className="page-shell">
+      <section className="hero-panel">
+        <p className="eyebrow">ACTS 4:13</p>
+        <h1>A recognizable life with Jesus.</h1>
+        <p className="hero-copy">
+          A free formation rhythm for making room, noticing what matters, and taking the next faithful step.
+        </p>
+        <div className="hero-note">
+          <span className="note-mark">✦</span>
+          <span>Start in the open. Save what becomes yours.</span>
+        </div>
+      </section>
+
+      <section className="account-panel" aria-labelledby="account-heading">
+        {user ? (
+          <div className="signed-in-state">
+            <p className="eyebrow">YOUR ROOM</p>
+            <h2 id="account-heading">Welcome in.</h2>
+            <p className="muted">Signed in as {user.email}.</p>
+            <div className="private-card">
+              <span className="card-kicker">PRIVATE BY DEFAULT</span>
+              <p>Your saved reflections, practices, and downloads will live here.</p>
+            </div>
+            <button className="button secondary" onClick={() => void signOut()} type="button">
+              Sign out
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="account-heading-row">
+              <div>
+                <p className="eyebrow">YOUR ACCOUNT</p>
+                <h2 id="account-heading">Make room.</h2>
+              </div>
+              <span className="status-dot" aria-label="Private account access" />
+            </div>
+
+            {!hasSupabaseConfig && (
+              <div className="setup-warning" role="status">
+                Account access is ready, but the local Supabase environment variables are not connected yet.
+              </div>
+            )}
+
+            <div className="mode-toggle" role="group" aria-label="Account action">
+              <button className={mode === "sign-in" ? "active" : ""} onClick={() => setMode("sign-in")} type="button">
+                Sign in
+              </button>
+              <button className={mode === "sign-up" ? "active" : ""} onClick={() => setMode("sign-up")} type="button">
+                Create account
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="email">Email</label>
+              <input id="email" onChange={(event) => setEmail(event.target.value)} required type="email" value={email} />
+              <label htmlFor="password">Password</label>
+              <input id="password" minLength={8} onChange={(event) => setPassword(event.target.value)} required type="password" value={password} />
+              <button className="button primary" disabled={busy} type="submit">
+                {busy ? "Working…" : mode === "sign-in" ? "Enter your room" : "Create free account"}
+              </button>
+            </form>
+
+            {message && <p className="form-message" role="status">{message}</p>}
+            <p className="privacy-note">Free to begin. Your private account area is separate from marketing consent.</p>
+          </>
+        )}
+      </section>
+    </main>
+  );
+}
