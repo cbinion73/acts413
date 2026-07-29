@@ -6,7 +6,7 @@ type Mode = "sign-in" | "sign-up";
 
 export function App() {
   const [user, setUser] = useState<User | null>(null);
-  const [mode, setMode] = useState<Mode>("sign-in");
+  const [mode, setMode] = useState<Mode>("sign-up");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [marketingConsent, setMarketingConsent] = useState(false);
@@ -76,7 +76,7 @@ export function App() {
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Take His hand. Begin here.</span>
+          <span>Create your free account. Take the next step.</span>
         </div>
       </section>
 
@@ -98,8 +98,8 @@ export function App() {
           <>
             <div className="account-heading-row">
               <div>
-                <p className="eyebrow">A PLACE TO BEGIN</p>
-                <h2 id="account-heading">Come as you are.</h2>
+                <p className="eyebrow">FREE ACCOUNT</p>
+                <h2 id="account-heading">Start here.</h2>
               </div>
               <span className="status-dot" aria-label="Private account access" />
             </div>
