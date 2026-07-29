@@ -72,11 +72,11 @@ export function App() {
         <p className="eyebrow">ACTS 4:13</p>
         <h1>A recognizable life with Jesus.</h1>
         <p className="hero-copy">
-          Follow a free formation rhythm that helps you notice Jesus, practice what matters, and live a recognizable life with Him.
+          When life pulls you under, Jesus meets you there. Follow a free rhythm of reflection, practice, and faithful steps toward a life that looks like Him.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Start in the open. Go deeper when you’re ready.</span>
+          <span>Take His hand. Begin here.</span>
         </div>
       </section>
 
@@ -98,14 +98,14 @@ export function App() {
           <>
             <div className="account-heading-row">
               <div>
-                <p className="eyebrow">GO DEEPER</p>
-                <h2 id="account-heading">Go deeper.</h2>
+                <p className="eyebrow">A PLACE TO BEGIN</p>
+                <h2 id="account-heading">Come as you are.</h2>
               </div>
               <span className="status-dot" aria-label="Private account access" />
             </div>
 
             <p className="account-intro">
-              Register free to save your reflections, follow guided journeys, and return to the next faithful step whenever you’re ready.
+              Create a free account to save your reflections, follow guided journeys, and return to your next faithful step whenever you’re ready.
             </p>
 
             {!hasSupabaseConfig && (
@@ -140,7 +140,7 @@ export function App() {
                 </label>
               )}
               <button className="button primary" disabled={busy} type="submit">
-                {busy ? "Working…" : mode === "sign-in" ? "Enter your room" : "Create free account"}
+                {busy ? "Working…" : mode === "sign-in" ? "Return to your room" : "Take the next step"}
               </button>
             </form>
 
