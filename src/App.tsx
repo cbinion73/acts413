@@ -72,7 +72,7 @@ export function App() {
         <p className="eyebrow">ACTS 4:13</p>
         <h1>Keep your eyes on Jesus.</h1>
         <p className="hero-copy">
-          When Peter took his eyes off Jesus, he began to sink. Jesus was his rescue—and He is our very present help in time of need. Create a free account to keep your eyes on Him through guided reflections, simple practices, and a growing movement of ordinary people being rescued, formed, and sent.
+          Peter began to sink when he looked away. Jesus reached for him—and He is our very present help in every time of need. Create a free account for guided reflections and simple practices that help you keep looking to Jesus. Join ordinary people being rescued, formed, and sent.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
