@@ -27,7 +27,7 @@ button, input { font: inherit; }
   padding: clamp(32px, 7vw, 96px);
   min-height: calc(100vh - 56px);
   color: #f8f2e8;
-  background-image: linear-gradient(180deg, rgba(4, 42, 45, .08) 0%, rgba(4, 42, 45, .14) 42%, rgba(3, 27, 31, .7) 100%), url('/images/acts413-rescue-hero.png');
+  background-image: linear-gradient(180deg, rgba(4, 42, 45, .08) 0%, rgba(4, 42, 45, .14) 42%, rgba(3, 27, 31, .7) 100%), url('/images/acts413-nail-pierced-hero.png');
   background-position: center;
   background-size: cover;
   box-shadow: 0 24px 70px rgba(19, 56, 55, .18);
@@ -44,6 +44,7 @@ h2 { margin-bottom: 10px; font-family: Georgia, serif; font-size: clamp(2.3rem, 
 .account-panel { align-self: center; width: min(100%, 540px); padding: clamp(28px, 5vw, 56px); background: rgba(255, 252, 245, .76); border: 1px solid rgba(21, 73, 69, .1); box-shadow: 0 24px 70px rgba(89, 71, 41, .11); }
 .account-heading-row { display: flex; justify-content: space-between; align-items: flex-start; }
 .status-dot { width: 11px; height: 11px; margin-top: 8px; border-radius: 50%; background: #c99a52; box-shadow: 0 0 0 6px rgba(201, 154, 82, .14); }
+.account-intro { margin: 8px 0 0; color: #5e716b; font-size: 1rem; line-height: 1.6; }
 .mode-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 32px 0 24px; padding: 4px; border-radius: 12px; background: #e9e1d4; }
 .mode-toggle button { padding: 10px 8px; border: 0; border-radius: 9px; color: #54706d; background: transparent; cursor: pointer; }
 .mode-toggle button.active { color: #153e3e; background: #fffdf8; box-shadow: 0 2px 10px rgba(52, 57, 44, .08); }

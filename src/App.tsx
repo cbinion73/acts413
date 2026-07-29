@@ -66,7 +66,7 @@ export function App() {
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Start in the open. Save what becomes yours.</span>
+          <span>Start in the open. Go deeper when you’re ready.</span>
         </div>
       </section>
 
@@ -88,11 +88,15 @@ export function App() {
           <>
             <div className="account-heading-row">
               <div>
-                <p className="eyebrow">YOUR ACCOUNT</p>
-                <h2 id="account-heading">Make room.</h2>
+                <p className="eyebrow">GO DEEPER</p>
+                <h2 id="account-heading">Go deeper.</h2>
               </div>
               <span className="status-dot" aria-label="Private account access" />
             </div>
+
+            <p className="account-intro">
+              Register free to save your reflections, follow guided journeys, and return to the next faithful step whenever you’re ready.
+            </p>
 
             {!hasSupabaseConfig && (
               <div className="setup-warning" role="status">
