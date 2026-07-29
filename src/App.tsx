@@ -9,6 +9,7 @@ export function App() {
   const [mode, setMode] = useState<Mode>("sign-in");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [marketingConsent, setMarketingConsent] = useState(false);
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
 
@@ -36,7 +37,16 @@ export function App() {
 
     const result = mode === "sign-in"
       ? await supabase.auth.signInWithPassword({ email, password })
-      : await supabase.auth.signUp({ email, password });
+      : await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              marketing_consent: marketingConsent,
+              marketing_consent_version: "2026-07-28-v1",
+            },
+          },
+        });
 
     if (result.error) {
       setMessage(result.error.message);
@@ -62,7 +72,7 @@ export function App() {
         <p className="eyebrow">ACTS 4:13</p>
         <h1>A recognizable life with Jesus.</h1>
         <p className="hero-copy">
-          A free formation rhythm for making room, noticing what matters, and taking the next faithful step.
+          Follow a free formation rhythm that helps you notice Jesus, practice what matters, and live a recognizable life with Him.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
@@ -118,13 +128,24 @@ export function App() {
               <input id="email" onChange={(event) => setEmail(event.target.value)} required type="email" value={email} />
               <label htmlFor="password">Password</label>
               <input id="password" minLength={8} onChange={(event) => setPassword(event.target.value)} required type="password" value={password} />
+              {mode === "sign-up" && (
+                <label className="consent-row" htmlFor="marketing-consent">
+                  <input
+                    checked={marketingConsent}
+                    id="marketing-consent"
+                    onChange={(event) => setMarketingConsent(event.target.checked)}
+                    type="checkbox"
+                  />
+                  <span>Yes, send me occasional ACTS413 emails about new reflections, guided journeys, and releases.</span>
+                </label>
+              )}
               <button className="button primary" disabled={busy} type="submit">
                 {busy ? "Working…" : mode === "sign-in" ? "Enter your room" : "Create free account"}
               </button>
             </form>
 
             {message && <p className="form-message" role="status">{message}</p>}
-            <p className="privacy-note">Free to begin. Your private account area is separate from marketing consent.</p>
+            <p className="privacy-note">Your account is free. Marketing email is optional, and you can unsubscribe at any time. A full privacy notice will be available before launch.</p>
           </>
         )}
       </section>
