@@ -70,13 +70,13 @@ export function App() {
     <main className="page-shell">
       <section className="hero-panel">
         <p className="eyebrow">ACTS 4:13</p>
-        <h1>They could tell he had been with Jesus.</h1>
+        <h1>Be recognized as someone who has been with Jesus.</h1>
         <p className="hero-copy">
-          Peter stood before powerful people with a courage they could not explain. They recognized that he had been with Jesus. Create a free account to practice that kind of daily nearness—save reflections, follow guided journeys, and return to your next faithful step.
+          In Acts 4, Peter stood before powerful people with a courage they could not explain. They recognized that he and John had been with Jesus. That kind of life begins here: rescued, formed, and sent. Create a free account to save reflections, follow guided journeys, and return to your next faithful step.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Create your free account. Be with Jesus here.</span>
+          <span>Create your free account. Begin with Jesus.</span>
         </div>
       </section>
 
