@@ -70,13 +70,13 @@ export function App() {
     <main className="page-shell">
       <section className="hero-panel">
         <p className="eyebrow">ACTS 4:13</p>
-        <h1>Find your next faithful step.</h1>
+        <h1>They could tell he had been with Jesus.</h1>
         <p className="hero-copy">
-          Create a free account to save your reflections, follow guided journeys, and return to a steady next step with Jesus whenever you need it.
+          Peter stood before powerful people with a courage they could not explain. They recognized that he had been with Jesus. Create a free account to practice that kind of daily nearness—save reflections, follow guided journeys, and return to your next faithful step.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Create your free account. Keep your next step close.</span>
+          <span>Create your free account. Be with Jesus here.</span>
         </div>
       </section>
 
