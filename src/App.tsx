@@ -70,13 +70,13 @@ export function App() {
     <main className="page-shell">
       <section className="hero-panel">
         <p className="eyebrow">ACTS 4:13</p>
-        <h1>Be recognized as someone who has been with Jesus.</h1>
+        <h1>Keep your eyes on Jesus.</h1>
         <p className="hero-copy">
-          In Acts 4, Peter stood before powerful people with a courage they could not explain. They recognized that he and John had been with Jesus. That kind of life begins here: rescued, formed, and sent. Create a free account to save reflections, follow guided journeys, and return to your next faithful step.
+          When Peter took his eyes off Jesus, he began to sink. Jesus was his rescue—and He is our very present help in time of need. Create a free account to keep your eyes on Him through guided reflections, simple practices, and a growing movement of ordinary people being rescued, formed, and sent.
         </p>
         <div className="hero-note">
           <span className="note-mark">✦</span>
-          <span>Create your free account. Begin with Jesus.</span>
+          <span>Create a free account. Keep your eyes on Jesus.</span>
         </div>
       </section>
 
